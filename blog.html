@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Блог - Иван Золотарев</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Blog/blog-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -35,17 +36,160 @@
     </header>
 
     <main class="main">
-        <section class="coming-soon">
+        <section class="blog-header">
             <div class="container">
-                <div class="coming-soon-content">
-                    <h1>Блог</h1>
-                    <div class="coming-soon-message">
-                        <i class="fas fa-pen-fancy"></i>
-                        <h2>Появится в скором времени</h2>
-                        <p>Мой блог находится в разработке. Скоро здесь появятся интересные статьи!</p>
-                        <a href="index.html" class="btn btn-primary">Вернуться на главную</a>
+                <h1>Блог</h1>
+                <p class="blog-description">Мои мысли, идеи и заметки о технологиях, личном развитии и многом другом</p>
+            </div>
+        </section>
+
+        <section class="blog-content">
+            <div class="container blog-container">
+                <div class="blog-main">
+                    <div class="blog-filter">
+                        <h2>Последние статьи</h2>
+                        <div class="filter-options">
+                            <button class="filter-btn active" data-filter="all">Все</button>
+                            <button class="filter-btn" data-filter="tech">Технологии</button>
+                            <button class="filter-btn" data-filter="personal">Личное развитие</button>
+                            <button class="filter-btn" data-filter="projects">Проекты</button>
+                        </div>
+                    </div>
+
+                    <div class="blog-posts">
+                        <!-- Статья 1 
+                        <article class="blog-post" data-category="tech">
+                            <div class="post-thumbnail">
+                                <img src="images/post-1.jpg" alt="Изображение статьи">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date">12 октября 2023</span>
+                                    <span class="post-category">Технологии</span>
+                                </div>
+                                <h3 class="post-title">Мой опыт изучения новых технологий в веб-разработке</h3>
+                                <p class="post-excerpt">Как я изучал современные фреймворки и библиотеки, с какими трудностями столкнулся и какие выводы сделал.</p>
+                                <a href="Blog/web-tech-learning.html" class="read-more">Читать далее</a>
+                            </div>
+                        </article>
+                        -->
+
+                        <!-- Статья 2 
+                        <article class="blog-post" data-category="personal">
+                            <div class="post-thumbnail">
+                                <img src="images/post-2.jpg" alt="Изображение статьи">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date">5 сентября 2023</span>
+                                    <span class="post-category">Личное развитие</span>
+                                </div>
+                                <h3 class="post-title">Как я организую свое время для максимальной продуктивности</h3>
+                                <p class="post-excerpt">Мои методы и инструменты для эффективного планирования задач и достижения поставленных целей.</p>
+                                <a href="Blog/productivity-tips.html" class="read-more">Читать далее</a>
+                            </div>
+                        </article>
+                        -->
+
+                        <!-- Статья 3 -->
+                        <article class="blog-post" data-category="projects">
+                            <div class="post-thumbnail">
+                                <img src="images/post-3.jpg" alt="Изображение статьи">
+                            </div>
+                            <div class="post-content">
+                                <div class="post-meta">
+                                    <span class="post-date">22 августа 2023</span>
+                                    <span class="post-category">Проекты</span>
+                                </div>
+                                <h3 class="post-title">Разработка персонального сайта-портфолио: от идеи до реализации</h3>
+                                <p class="post-excerpt">История создания моего сайта, технические решения и планы по его дальнейшему развитию.</p>
+                                <a href="Blog/portfolio-development.html" class="read-more">Читать далее</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="pagination">
+                        <a href="#" class="pagination-btn active">1</a>
+                        <a href="#" class="pagination-btn">2</a>
+                        <a href="#" class="pagination-btn">3</a>
+                        <a href="#" class="pagination-btn next">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
                     </div>
                 </div>
+
+                <aside class="blog-sidebar">
+                    <div class="sidebar-widget search-widget">
+                        <h3>Поиск</h3>
+                        <form class="search-form">
+                            <input type="text" placeholder="Искать...">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+
+                    <div class="sidebar-widget categories-widget">
+                        <h3>Категории</h3>
+                        <ul class="categories-list">
+                            <li><a href="#">Технологии <span>(5)</span></a></li>
+                            <li><a href="#">Личное развитие <span>(3)</span></a></li>
+                            <li><a href="#">Проекты <span>(2)</span></a></li>
+                            <li><a href="#">Обучение <span>(4)</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget recent-posts-widget">
+                        <h3>Недавние посты</h3>
+                        <ul class="recent-posts-list">
+                            <li>
+                                <!-- <a href="Blog/web-tech-learning.html">
+                                    <div class="post-thumb">
+                                        <img src="images/recent-1.jpg" alt="Недавний пост">
+                                    </div>
+                                    <div class="post-info">
+                                        <h4>Мой опыт изучения новых технологий</h4>
+                                        <span>12 октября 2023</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Blog/productivity-tips.html">
+                                    <div class="post-thumb">
+                                        <img src="images/recent-2.jpg" alt="Недавний пост">
+                                    </div>
+                                    <div class="post-info">
+                                        <h4>Как я организую свое время</h4>
+                                        <span>5 сентября 2023</span>
+                                    </div>
+                                </a>
+                            </li>
+                            -->
+                            <li>
+                                <a href="Blog/portfolio-development.html">
+                                    <div class="post-thumb">
+                                        <img src="images/post-3.jpg" alt="Недавний пост">
+                                    </div>
+                                    <div class="post-info">
+                                        <h4>Разработка персонального сайта</h4>
+                                        <span>22 августа 2023</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget tags-widget">
+                        <h3>Теги</h3>
+                        <div class="tags-cloud">
+                            <a href="#" class="tag">Веб-разработка</a>
+                            <a href="#" class="tag">JavaScript</a>
+                            <a href="#" class="tag">CSS</a>
+                            <a href="#" class="tag">HTML</a>
+                            <a href="#" class="tag">Продуктивность</a>
+                            <a href="#" class="tag">Обучение</a>
+                            <a href="#" class="tag">Проекты</a>
+                        </div>
+                    </div>
+                </aside>
             </div>
         </section>
     </main>

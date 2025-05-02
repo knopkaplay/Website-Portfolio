@@ -232,4 +232,90 @@ document.addEventListener('DOMContentLoaded', function() {
             navbarDrawer.close();
         });
     }
+    
+    // Фильтрация постов блога
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const blogPosts = document.querySelectorAll('.blog-post');
+    
+    if (filterButtons.length > 0 && blogPosts.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Убираем класс active со всех кнопок
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Добавляем класс active для текущей кнопки
+                this.classList.add('active');
+                
+                // Получаем категорию из data-атрибута
+                const filterValue = this.getAttribute('data-filter');
+                
+                // Фильтруем посты
+                blogPosts.forEach(post => {
+                    const postCategory = post.getAttribute('data-category');
+                    
+                    // Если выбрано "все" или пост соответствует категории, показываем его
+                    if (filterValue === 'all' || filterValue === postCategory) {
+                        post.style.display = 'block';
+                        post.style.opacity = '0';
+                        // Анимация появления
+                        setTimeout(() => {
+                            post.style.opacity = '1';
+                            post.style.transition = 'opacity 0.5s ease';
+                        }, 100);
+                    } else {
+                        // Иначе скрываем пост
+                        post.style.opacity = '0';
+                        post.style.transition = 'opacity 0.5s ease';
+                        setTimeout(() => {
+                            post.style.display = 'none';
+                        }, 500);
+                    }
+                });
+            });
+        });
+    }
+    
+    // Инициализация поиска в блоге
+    const searchForm = document.querySelector('.search-form');
+    const searchInput = document.querySelector('.search-form input');
+    
+    if (searchForm && searchInput && blogPosts.length > 0) {
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            
+            if (searchTerm === '') {
+                // Если поиск пустой, показываем все посты
+                blogPosts.forEach(post => {
+                    post.style.display = 'block';
+                    post.style.opacity = '1';
+                });
+                return;
+            }
+            
+            // Фильтруем посты по поисковому запросу
+            blogPosts.forEach(post => {
+                const title = post.querySelector('.post-title').textContent.toLowerCase();
+                const excerpt = post.querySelector('.post-excerpt').textContent.toLowerCase();
+                const category = post.querySelector('.post-category').textContent.toLowerCase();
+                
+                // Если запрос найден в заголовке, описании или категории, показываем пост
+                if (title.includes(searchTerm) || excerpt.includes(searchTerm) || category.includes(searchTerm)) {
+                    post.style.display = 'block';
+                    post.style.opacity = '0';
+                    // Анимация появления
+                    setTimeout(() => {
+                        post.style.opacity = '1';
+                        post.style.transition = 'opacity 0.5s ease';
+                    }, 100);
+                } else {
+                    // Иначе скрываем пост
+                    post.style.opacity = '0';
+                    post.style.transition = 'opacity 0.5s ease';
+                    setTimeout(() => {
+                        post.style.display = 'none';
+                    }, 500);
+                }
+            });
+        });
+    }
 });
