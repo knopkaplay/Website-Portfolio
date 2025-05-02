@@ -38,3 +38,46 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
     Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
     Header set Pragma "no-cache"
 </FilesMatch>
+
+# Правила для SEO-оптимизации
+# Редирект с WWW на без WWW
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# Обработка 404 ошибки
+ErrorDocument 404 /404.html
+
+# Запрет доступа к определенным файлам
+<FilesMatch "(^\.htaccess|\.htpasswd|\.git|\.env|\.gitignore|robots\.txt|composer\.json|package\.json)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Разрешить доступ к robots.txt
+<Files robots.txt>
+    Allow from all
+</Files>
+
+# Запрет листинга директорий
+Options -Indexes
+
+# Установить кодировку по умолчанию
+AddDefaultCharset UTF-8
+
+# Защита от хотлинкинга изображений
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?ивангений\.рф/.*$ [NC]
+RewriteRule \.(jpe?g|png|gif)$ - [F]
+
+# Gzip сжатие для улучшения производительности
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>

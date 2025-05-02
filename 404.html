@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Страница не найдена | Иван Золотарев</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .error-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: #4a90e2;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+        
+        .error-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+        
+        .error-message {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #cccccc;
+            line-height: 1.6;
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .error-icon {
+            font-size: 5rem;
+            color: #4a90e2;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="logo">
+                    <a href="index.html">Иван Золотарев</a>
+                </div>
+            </div>
+            <div class="mobile-overlay"></div>
+            <div class="nav-links">
+                <div class="close-nav">
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="index.html">Главная</a>
+                <a href="blog.html">Блог</a>
+                <a href="achievements.html">Список невозможностей</a>
+                <a href="CV.pdf">CV</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="error-section">
+            <i class="fas fa-exclamation-triangle error-icon"></i>
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Страница не найдена</h2>
+            <p class="error-message">Упс! Кажется, вы попали на несуществующую страницу. Возможно, она была перемещена или удалена. Проверьте правильность URL или воспользуйтесь навигацией ниже.</p>
+            <div class="error-actions">
+                <a href="index.html" class="btn btn-primary">Вернуться на главную</a>
+                <a href="blog.html" class="btn btn-secondary">Перейти в блог</a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="footer-container">
+            <div class="footer-contacts">
+                <h3>Связь со мной</h3>
+                <div class="contact-links">
+                    <a href="mailto:cryptoknopka1@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Написать</span>
+                    </a>
+                    <a href="https://t.me/Haise_Kirukato" class="contact-link">
+                        <i class="fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="https://discord.com/users/haise_kirukato" class="contact-link">
+                        <i class="fab fa-discord"></i>
+                        <span>Discord</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <h3>Навигация</h3>
+                <div class="footer-links">
+                    <a href="index.html">Главная</a>
+                    <a href="blog.html">Блог</a>
+                    <a href="achievements.html">Список невозможностей</a>
+                    <a href="CV.pdf">CV</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html> 

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /blog.html
+Allow: /achievements.html
+Allow: /network-equipment.html
+Allow: /Blog/
+Allow: /images/
+Disallow: /models/
+Disallow: /3D models/
+
+Sitemap: https://ивангений.рф/sitemap.xml 
