@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сетевое оборудование - Иван Золотарев</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="network-equipment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/ColladaLoader.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="logo">
+                    <a href="index.html">Иван Золотарев</a>
+                </div>
+            </div>
+            <div class="mobile-overlay"></div>
+            <div class="nav-links">
+                <div class="close-nav">
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="index.html">Главная</a>
+                <a href="blog.html">Блог</a>
+                <a href="achievements.html">Список невозможностей</a>
+                <a href="CV.pdf">CV</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="equipment-hero">
+            <div class="container">
+                <h1>Сетевое оборудование</h1>
+                <p class="subtitle">Интерактивный каталог с 3D-моделями</p>
+            </div>
+        </section>
+
+        <section class="equipment-catalog">
+            <div class="container">
+                <div class="equipment-filters">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="routers">Маршрутизаторы</button>
+                    <button class="filter-btn" data-filter="switches">Коммутаторы</button>
+                    <button class="filter-btn" data-filter="access-points">Точки доступа</button>
+                </div>
+
+                <div class="equipment-grid">
+                    <!-- Маршрутизатор -->
+                    <div class="equipment-item" data-category="routers">
+                        <div class="equipment-preview">
+                            <!-- Восстанавливаю встраивание модели в основное содержимое -->
+                            <div class="sketchfab-embed-wrapper" style="width: 100%; height: 100%;">
+                                <iframe title="Cisco 2900 Switch4" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/5acb297e0953486d8c0b32f76e6af5a0/embed" style="width: 100%; height: 100%;"></iframe>
+                            </div>
+                            <div class="equipment-controls">
+                                <!-- Удаляю кнопки зума и вращения -->
+                                <!-- <button class="control-btn rotate-btn"><i class="fas fa-sync-alt"></i></button>
+                                <button class="control-btn zoom-in-btn"><i class="fas fa-search-plus"></i></button>
+                                <button class="control-btn zoom-out-btn"><i class="fas fa-search-minus"></i></button> -->
+                            </div>
+                        </div>
+                        <div class="equipment-info">
+                            <h3>Cisco 2900 Series</h3>
+                            <div class="equipment-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(4.5/5)</span>
+                            </div>
+                            <div class="equipment-price">
+                                <span class="price-value">238401.25 ₽</span>
+                                <span class="price-discount">-15%</span>
+                            </div>
+                            <div class="equipment-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Порты:</span>
+                                    <span class="spec-value">4x Gigabit Ethernet</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Производительность:</span>
+                                    <span class="spec-value">До 75 Мбит/с</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Память:</span>
+                                    <span class="spec-value">512 МБ</span>
+                                </div>
+                            </div>
+                            <p class="equipment-description">
+                                Маршрутизатор Cisco 2900 Series обеспечивает высокую производительность, безопасность и надежность для корпоративных сетей. Поддерживает различные сервисы, включая VPN, QoS и защиту от угроз.
+                            </p>
+                            <div class="equipment-actions">
+                                <button class="btn btn-primary">Заказать</button>
+                                <button class="btn btn-secondary">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Коммутатор -->
+                    <div class="equipment-item" data-category="switches">
+                        <div class="equipment-preview">
+                            <div class="sketchfab-embed-wrapper">
+                                <iframe title="Switch CISCO" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/bf8e5c96974a40dd82b7618bb2e7962d/embed?autostart=1"></iframe>
+                            </div>
+                            <div class="equipment-controls">
+                                <!-- Удаляю кнопки зума и вращения -->
+                                <!-- <button class="control-btn rotate-btn"><i class="fas fa-sync-alt"></i></button>
+                                <button class="control-btn zoom-in-btn"><i class="fas fa-search-plus"></i></button>
+                                <button class="control-btn zoom-out-btn"><i class="fas fa-search-minus"></i></button> -->
+                            </div>
+                        </div>
+                        <div class="equipment-info">
+                            <h3>Cisco WS-C2960R+48PST-L</h3>
+                            <div class="equipment-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(4.0/5)</span>
+                            </div>
+                            <div class="equipment-price">
+                                <span class="price-value">76 400 ₽</span>
+                                <span class="price-discount">-10%</span>
+                            </div>
+                            <div class="equipment-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Порты:</span>
+                                    <span class="spec-value">48x Fast Ethernet</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Коммутационная способность:</span>
+                                    <span class="spec-value">16 Гбит/с</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">PoE:</span>
+                                    <span class="spec-value">Поддерживается</span>
+                                </div>
+                            </div>
+                            <p class="equipment-description">
+                                Коммутатор Cisco WS-C2960R+48PST-L обеспечивает надежное и эффективное решение для построения корпоративных сетей с поддержкой питания подключенных устройств через PoE,
+                                гибкими возможностями подключения и удобным управлением.
+                            </p>
+                            <div class="equipment-actions">
+                                <button class="btn btn-primary">Заказать</button>
+                                <button class="btn btn-secondary">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Точка доступа -->
+                    <div class="equipment-item" data-category="access-points" role="article">
+                        <div class="equipment-preview" aria-label="3D модель роутера">
+                            <div class="sketchfab-embed-wrapper" style="width: 100%; height: 100%;">
+                                <iframe 
+                                    title="Smart WiFi Router TP-LINK Archer A64 Ethernet" 
+                                    frameborder="0" 
+                                    loading="lazy"
+                                    allowfullscreen 
+                                    src="https://sketchfab.com/models/2634855db6bd4b8c8797d7f51143c56a/embed?autostart=0"
+                                    style="width: 100%; height: 100%;">
+                                </iframe>
+                            </div>
+                        </div>
+                        <div class="equipment-info">
+                            <h3 id="router-title">TP-Link Archer A64</h3>
+                            <div class="equipment-rating" aria-label="Рейтинг 4.5 из 5">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(4.5/5)</span>
+                            </div>
+                            <div class="equipment-price">
+                                <span class="price-value">4 990 ₽</span>
+                                <span class="price-discount">-15%</span>
+                            </div>
+                            <div class="equipment-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">Wi-Fi:</span>
+                                    <span class="spec-value">Wi-Fi 6 (802.11ax)</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Скорость:</span>
+                                    <span class="spec-value">До 1500 Мбит/с</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Порты:</span>
+                                    <span class="spec-value">4x Gigabit LAN, 1x Gigabit WAN</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Антенны:</span>
+                                    <span class="spec-value">4 внешние антенны</span>
+                                </div>
+                            </div>
+                            <p class="equipment-description">
+                                Роутер TP-Link Archer A64 с поддержкой Wi-Fi 6 обеспечивает высокоскоростное подключение и стабильную работу даже при большом количестве подключенных устройств. Технология OFDMA и MU-MIMO позволяет эффективно распределять ресурсы между всеми пользователями сети.
+                            </p>
+                            <div class="equipment-actions">
+                                <button class="btn btn-primary" aria-label="Заказать TP-Link Archer A64">Заказать</button>
+                                <button class="btn btn-secondary" aria-label="Подробнее о TP-Link Archer A64">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="footer-container">
+            <div class="footer-contacts">
+                <h3>Связь со мной</h3>
+                <div class="contact-links">
+                    <a href="mailto:cryptoknopka1@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Написать</span>
+                    </a>
+                    <a href="https://t.me/Haise_Kirukato" class="contact-link">
+                        <i class="fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="https://discord.com/users/haise_kirukato" class="contact-link">
+                        <i class="fab fa-discord"></i>
+                        <span>Discord</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <h3>Навигация</h3>
+                <div class="footer-links">
+                    <a href="index.html">Главная</a>
+                    <a href="blog.html">Блог</a>
+                    <a href="achievements.html">Список невозможностей</a>
+                    <a href="CV.pdf">CV</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+    <script src="network-equipment.js"></script>
+
+    <!-- Модальное окно для 3D-модели -->
+    <div id="modelModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="sketchfab-embed-wrapper" style="width: 100%; height: 100%;">
+                <iframe title="Cisco 2900 Switch4" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/5acb297e0953486d8c0b32f76e6af5a0/embed" style="width: 100%; height: 100%;"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,40 @@
+# Редирект с http на https создан автоматически при заказе бесплатного ssl-сертификата
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Отключение кеширования
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+</IfModule>
+
+# Полное отключение кеширования
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access"
+    ExpiresByType text/html "access"
+    ExpiresByType text/php "access"
+    ExpiresByType application/x-httpd-php "access"
+    ExpiresByType application/javascript "access"
+    ExpiresByType text/javascript "access"
+    ExpiresByType text/css "access"
+    ExpiresByType image/jpeg "access"
+    ExpiresByType image/png "access"
+</IfModule>
+
+# Дополнительные заголовки для отключения кеширования
+<IfModule mod_headers.c>
+    Header unset ETag
+    Header unset Last-Modified
+    Header set Cache-Control "no-store, no-cache, must-revalidate, private"
+    Header set Pragma "no-cache"
+    FileETag None
+</IfModule>
+
+# Отключение кеширования PHP
+<FilesMatch "\.(php|html|htm)$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+</FilesMatch>
